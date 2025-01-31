@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Match3Prototype": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Liam\\Downloads\\Godot_v4.3-stable_mono_win64\\Godot_v4.3-stable_mono_win64_console.exe",
+      "commandLineArgs": "--path.--verbose",
+      "workingDirectory": "."
+    }
+  }
+}
