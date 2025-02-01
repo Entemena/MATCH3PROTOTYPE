@@ -4,7 +4,7 @@ public partial class Tile : Area2D
 {
     public bool IsAnimating { get; set; }
     public int TileType { get; set; }
-    public Board Board { get; set; }
+    public BoardManager Board { get; set; }
     public int Row { get; set; }
     public int Col { get; set; }
 
