@@ -2,7 +2,13 @@ using Godot;
 
 public partial class Tile : Area2D
 {
-    public bool IsAnimating { get; set; }
+    private bool _isAnimating;
+    public bool IsAnimating
+    {
+        get => _isAnimating;
+        set => SetAnimatingState(value);
+    }
+
     public int TileType { get; set; }
     public BoardManager Board { get; set; }
     public int Row { get; set; }
@@ -23,7 +29,7 @@ public partial class Tile : Area2D
 
     private void OnTileInputEvent(Viewport viewport, InputEvent @event, long shapeIdx)
     {
-        if (IsAnimating) return;
+        if (IsAnimating || !Visible) return;
         if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
         {
             Board.OnTileClicked(this);
@@ -37,5 +43,11 @@ public partial class Tile : Area2D
             _highlightAnim.Play("select");
         else
             _highlightAnim.Stop();
+    }
+    private void SetAnimatingState(bool value)
+    {
+        _isAnimating = value;
+        Monitorable = !value;  // Disable interactions during animation
+        Monitoring = !value;
     }
 }

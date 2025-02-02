@@ -1,40 +1,90 @@
-﻿using Godot;
+using Godot;
+using System;
+
+public enum GameState
+{
+    MainMenu,
+    Puzzle,
+    Paused,
+    GameOver
+}
 
 public partial class GameManager : Node
 {
+    // Singleton instance.
     public static GameManager Instance { get; private set; }
 
-    [Signal] public delegate void ScoreUpdatedEventHandler(int newScore);
+    // Global game state (not including board-specific states).
+    public GameState CurrentState { get; private set; } = GameState.MainMenu;
 
-    private int _score;
-    private BoardManager _board;
+    // Global game data (score, settings, etc.).
+    public int GlobalScore { get; set; } = 0;
 
-    public override void _EnterTree()
+    // A reference to the current puzzle board (if any).
+    public BoardManager CurrentBoard { get; set; } = null;
+
+    public override void _Ready()
     {
-        if (Instance != null)
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
         {
             QueueFree();
             return;
         }
-        Instance = this;
+
+        GD.Print("GameManager ready.");
+        SetState(GameState.MainMenu);
+
+        // Optionally, load the main menu scene here:
+        // GetTree().ChangeScene("res://MainMenu.tscn");
     }
 
-    public void Initialize(BoardManager board)
+    /// <summary>
+    /// Changes the global game state.
+    /// </summary>
+    public void SetState(GameState newState)
     {
-        _board = board;
-        _score = 0;
+        CurrentState = newState;
+        GD.Print("Game state changed to: " + newState.ToString());
     }
 
-    public void AddScore(int points)
+    /// <summary>
+    /// Starts a new game by switching to the puzzle scene.
+    /// </summary>
+    public void StartNewGame()
     {
-        _score += points;
-        EmitSignal(SignalName.ScoreUpdated, _score);
+        SetState(GameState.Puzzle);
+        GD.Print("Starting new game...");
+        // Change the scene to your puzzle scene. Adjust the path as needed.
+        GetTree().ChangeSceneToFile("res://PuzzleScene.tscn");
     }
 
-    public void ResetGame()
+    /// <summary>
+    /// Returns to the Main Menu.
+    /// </summary>
+    public void ShowMainMenu()
     {
-        _board.ResetBoard();
-        _score = 0;
-        EmitSignal(SignalName.ScoreUpdated, _score);
+        SetState(GameState.MainMenu);
+        // Change the scene to your main menu scene. Adjust the path as needed.
+        GetTree().ChangeSceneToFile("res://MainMenu.tscn");
+    }
+
+    /// <summary>
+    /// Continues an existing game (implementation depends on your save system).
+    /// </summary>
+    public void ContinueGame()
+    {
+        // Implement your continue logic here.
+    }
+
+    /// <summary>
+    /// Loads a saved game.
+    /// </summary>
+    public void LoadGame()
+    {
+        // Implement your load game logic here.
     }
 }

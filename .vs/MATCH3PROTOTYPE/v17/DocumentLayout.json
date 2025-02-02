@@ -7,16 +7,12 @@
       "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\boardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\Board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\tile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,27 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Board.cs",
-              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\Board.cs",
-              "RelativeDocumentMoniker": "Scripts\\Board.cs",
-              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\Board.cs",
-              "RelativeToolTip": "Scripts\\Board.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAgwHMAAAAFAAAA",
+              "DocumentIndex": 1,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Scripts\\GameManager.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAswBMAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T20:51:49.477Z"
+              "WhenOpened": "2025-02-02T16:50:31.93Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -54,9 +47,9 @@
               "Title": "BoardManager.cs",
               "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\BoardManager.cs",
               "RelativeDocumentMoniker": "Scripts\\BoardManager.cs",
-              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\BoardManager.cs",
-              "RelativeToolTip": "Scripts\\BoardManager.cs",
-              "ViewState": "AQIAAMcBAAAAAAAAAAAuwPsBAAAAAAAA",
+              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\BoardManager.cs*",
+              "RelativeToolTip": "Scripts\\BoardManager.cs*",
+              "ViewState": "AQIAAPQBAAAAAAAAAAAAAB8CAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-01T18:41:47.861Z",
               "EditorCaption": ""
@@ -64,26 +57,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
-              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Scripts\\GameManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T18:37:11.354Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Tile.cs",
               "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\Tile.cs",
               "RelativeDocumentMoniker": "Scripts\\Tile.cs",
               "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\Tile.cs",
               "RelativeToolTip": "Scripts\\Tile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAgAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAA7wAsAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T20:35:44.141Z"
+              "WhenOpened": "2025-01-30T20:35:44.141Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -15,7 +15,7 @@ public partial class BoardManager : Node2D
     private Tile[,] _tiles;
     private float _tileSpacing;      // Effective spacing between tile centers.
     private Vector2 _boardOffset;    // Offset to center the board on screen.
-    private Tile _selectedTile;
+    private Tile _currentlySelectedTile;
     private bool _isSwapping;
     private bool _boardLocked;
     private List<Tween> _activeTweens = new List<Tween>();
@@ -25,8 +25,11 @@ public partial class BoardManager : Node2D
         // Connect to viewport resize events.
         GetViewport().Connect("size_changed", new Callable(this, nameof(OnWindowResized)));
 
-        // Initialize the GameManager (if available).
-        GameManager.Instance?.Initialize(this);
+        // Register this board with the GameManager (if available).
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.CurrentBoard = this;
+        }
 
         InitializeBoard();
         CenterBoard();
@@ -154,7 +157,7 @@ public partial class BoardManager : Node2D
         if (_isSwapping || _boardLocked || clickedTile == null || !IsInstanceValid(clickedTile))
             return;
 
-        if (_selectedTile == null)
+        if (_currentlySelectedTile == null)
         {
             SelectTile(clickedTile);
         }
@@ -166,24 +169,24 @@ public partial class BoardManager : Node2D
 
     private void SelectTile(Tile tile)
     {
-        _selectedTile = tile;
-        _selectedTile.SetHighlight(true);
+        _currentlySelectedTile = tile;
+        _currentlySelectedTile.SetHighlight(true);
     }
 
     private void HandleTileSelection(Tile clickedTile)
     {
-        if (_selectedTile != null)
-            _selectedTile.SetHighlight(false);
+        if (_currentlySelectedTile != null)
+            _currentlySelectedTile.SetHighlight(false);
 
-        if (AreTilesAdjacent(_selectedTile, clickedTile))
+        if (AreTilesAdjacent(_currentlySelectedTile, clickedTile))
         {
-            SwapTiles(_selectedTile, clickedTile);
-            _selectedTile = null;
+            SwapTiles(_currentlySelectedTile, clickedTile);
+            _currentlySelectedTile = null;
         }
         else
         {
-            _selectedTile = clickedTile;
-            _selectedTile.SetHighlight(true);
+            _currentlySelectedTile = clickedTile;
+            _currentlySelectedTile.SetHighlight(true);
         }
     }
 
@@ -258,7 +261,7 @@ public partial class BoardManager : Node2D
         while (foundMatches && iteration < maxIterations);
 
         _isSwapping = false;
-        _selectedTile = null;
+        _currentlySelectedTile = null;
     }
 
     /// <summary>
@@ -501,6 +504,39 @@ public partial class BoardManager : Node2D
         }
         InitializeBoard();
         CenterBoard();
+    }
+
+    #endregion
+
+    #region Debug
+
+    /// <summary>
+    /// Prints the positions of all tiles on the board.
+    /// </summary>
+    public void PrintTilePositions()
+    {
+        for (int row = 0; row < Rows; row++)
+        {
+            for (int col = 0; col < Cols; col++)
+            {
+                if (_tiles[row, col] != null)
+                {
+                    GD.Print($"Tile at [{row}, {col}] position: {_tiles[row, col].Position}");
+                }
+                else
+                {
+                    GD.Print($"Tile at [{row}, {col}] is null.");
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Should be connected to the PrintTilePositionsButton's pressed signal.
+    /// </summary>
+    public void OnPrintTilePositionsButtonPressed()
+    {
+        PrintTilePositions();
     }
 
     #endregion
