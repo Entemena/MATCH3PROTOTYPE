@@ -3,32 +3,59 @@ using System;
 
 public partial class MainMenu : Control
 {
+    private Button newGameButton;
+    private Button settingsButton;
+    private Button quitGameButton;
+
     public override void _Ready()
     {
-        // Get button nodes
-        Button playButton = GetNode<Button>("VBoxContainer/PlayButton");
-        Button settingsButton = GetNode<Button>("VBoxContainer/SettingsButton");
-        Button quitButton = GetNode<Button>("VBoxContainer/QuitButton");
-
-        // Connect buttons to event handlers
-        playButton.Pressed += OnPlayButtonPressed;
-        settingsButton.Pressed += OnSettingsButtonPressed;
-        quitButton.Pressed += OnQuitButtonPressed;
+        CallDeferred(nameof(DeferredSetup));
     }
+
+    private void DeferredSetup()
+    {
+        newGameButton = GetNodeOrNull<Button>("VBoxContainer/NewGameButton");
+        settingsButton = GetNodeOrNull<Button>("VBoxContainer/SettingsButton");
+        quitGameButton = GetNodeOrNull<Button>("VBoxContainer/QuitGameButton");
+
+        GD.Print($"Play Button found: {newGameButton != null}");
+        GD.Print($"Settings Button found: {settingsButton != null}");
+        GD.Print($"Quit Button found: {quitGameButton != null}");
+
+        if (newGameButton != null)
+        {
+            newGameButton.Pressed += OnPlayButtonPressed;
+            GD.Print("Play button connected.");
+        }
+
+        if (settingsButton != null)
+        {
+            settingsButton.Pressed += OnSettingsButtonPressed;
+            GD.Print("Settings button connected.");
+        }
+
+        if (quitGameButton != null)
+        {
+            quitGameButton.Pressed += OnQuitButtonPressed;
+            GD.Print("Quit button connected.");
+        }
+    }
+
 
     private void OnPlayButtonPressed()
     {
-        // Change to game scene
-        GetTree().ChangeSceneToFile("res://GameScene.tscn");
+        GD.Print("Play button pressed!");
+        GameManager.Instance?.StartNewGame();
     }
 
     private void OnSettingsButtonPressed()
     {
-        GD.Print("Open Settings Menu (To Be Implemented)");
+        GD.Print("Settings button pressed! (To Be Implemented)");
     }
 
     private void OnQuitButtonPressed()
     {
+        GD.Print("Quit button pressed!");
         GetTree().Quit();
     }
 }

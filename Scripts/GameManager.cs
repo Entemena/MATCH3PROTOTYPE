@@ -28,18 +28,14 @@ public partial class GameManager : Node
         if (Instance == null)
         {
             Instance = this;
+            ShowMainMenu();
         }
         else
         {
             QueueFree();
             return;
         }
-
         GD.Print("GameManager ready.");
-        SetState(GameState.MainMenu);
-
-        // Optionally, load the main menu scene here:
-        // GetTree().ChangeScene("res://MainMenu.tscn");
     }
 
     /// <summary>
@@ -48,7 +44,7 @@ public partial class GameManager : Node
     public void SetState(GameState newState)
     {
         CurrentState = newState;
-        GD.Print("Game state changed to: " + newState.ToString());
+        GD.Print("Game state changed to: " + newState);
     }
 
     /// <summary>
@@ -59,7 +55,7 @@ public partial class GameManager : Node
         SetState(GameState.Puzzle);
         GD.Print("Starting new game...");
         // Change the scene to your puzzle scene. Adjust the path as needed.
-        GetTree().ChangeSceneToFile("res://PuzzleScene.tscn");
+        GetTree().ChangeSceneToFile("res://Scenes/PuzzleScene.tscn");
     }
 
     /// <summary>
@@ -69,7 +65,12 @@ public partial class GameManager : Node
     {
         SetState(GameState.MainMenu);
         // Change the scene to your main menu scene. Adjust the path as needed.
-        GetTree().ChangeSceneToFile("res://MainMenu.tscn");
+        CallDeferred(nameof(DeferredLoadMainMenu));
+        ;
+    }
+    private void DeferredLoadMainMenu()
+    {
+        GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
     }
 
     /// <summary>
