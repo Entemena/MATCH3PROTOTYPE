@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Match3Prototype"
-run/main_scene="res://Scenes/Board.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
+run/max_fps=10
 config/icon="res://icon.svg"
 
 [autoload]
