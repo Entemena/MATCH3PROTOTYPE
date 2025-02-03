@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://digbomquqrwn"]
+[gd_scene load_steps=14 format=3 uid="uid://digbomquqrwn"]
 
-[ext_resource type="Script" path="res://Scripts/MergeScene.cs" id="1_yf5o2"]
+[ext_resource type="Script" path="res://Scripts/MergeBoardManager.cs" id="1_furag"]
+[ext_resource type="PackedScene" uid="uid://b8atbx3e0skhh" path="res://Scenes/MergeTile.tscn" id="2_ieiyb"]
+[ext_resource type="Resource" uid="uid://bxxo478k2ebnj" path="res://Resources/Tile_A.tres" id="3_dxfyj"]
+[ext_resource type="Texture2D" uid="uid://dmtaj0gnhe4py" path="res://Assets/Tiles/c1.png" id="3_md7n3"]
+[ext_resource type="Texture2D" uid="uid://3ypiunycknbb" path="res://Assets/Tiles/b1.png" id="4_06p1s"]
+[ext_resource type="Resource" uid="uid://j6vko051gbl3" path="res://Resources/Tile_B.tres" id="4_v3tkj"]
+[ext_resource type="Resource" uid="uid://c7g1o5adpg7s7" path="res://Resources/Tile_C.tres" id="5_nlyqh"]
+[ext_resource type="Texture2D" uid="uid://ciulve6hbybui" path="res://Assets/Tiles/p1.png" id="5_utmh2"]
+[ext_resource type="Resource" uid="uid://buup7p1dgihum" path="res://Resources/Tile_P.tres" id="6_4nepi"]
+[ext_resource type="Texture2D" uid="uid://bh4brq6c4xfjy" path="res://Assets/Tiles/s1.png" id="6_p3agu"]
+[ext_resource type="Texture2D" uid="uid://dsf5e85m3cn5s" path="res://Assets/Tiles/w1.png" id="7_3c24r"]
+[ext_resource type="Resource" uid="uid://di3qn0qt8w5t4" path="res://Resources/Tile_S.tres" id="7_a7ga6"]
+[ext_resource type="Resource" uid="uid://bhwsipophn1us" path="res://Resources/Tile_W.tres" id="8_4kxx2"]
 
 [node name="MergeScene" type="Node2D"]
-script = ExtResource("1_yf5o2")
+script = ExtResource("1_furag")
+MergeTileScene = ExtResource("2_ieiyb")
+MergeTileTextures = Array[Texture2D]([ExtResource("3_md7n3"), ExtResource("4_06p1s"), ExtResource("3_md7n3"), ExtResource("5_utmh2"), ExtResource("6_p3agu"), ExtResource("7_3c24r")])
+TileTextureResources = Array[Object]([ExtResource("3_dxfyj"), ExtResource("4_v3tkj"), ExtResource("5_nlyqh"), ExtResource("6_4nepi"), ExtResource("7_a7ga6"), ExtResource("8_4kxx2")])

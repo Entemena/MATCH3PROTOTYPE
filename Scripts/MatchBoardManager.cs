@@ -1,4 +1,4 @@
-using Godot;
+    using Godot;
 using System;
 using System.Collections.Generic;
 
@@ -28,7 +28,7 @@ public partial class MatchBoardManager : Node2D
         // Register this board with the GameManager (if available).
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.CurrentBoard = this;
+            GameManager.Instance.CurrentMatchBoard = this;
         }
 
         InitializeBoard();

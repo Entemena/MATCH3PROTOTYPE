@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Liam\\Documents\\match3prototype\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\mergetile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\mergetile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\mergeboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\mergeboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\mergetile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\mergetile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\matchboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\matchboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\resources\\mergetiletexturedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\resources\\mergetiletexturedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Liam\\Documents\\match3prototype\\Resources\\MergeTileTextureData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Resources\\MergeTileTextureData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\matchtile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\matchtile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,93 +47,95 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MergeBoardManager.cs",
-              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MergeBoardManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\MergeBoardManager.cs",
-              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MergeBoardManager.cs",
-              "RelativeToolTip": "Scripts\\MergeBoardManager.cs",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAuwGMAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T15:00:13.003Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "MergeTile.cs",
               "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MergeTile.cs",
               "RelativeDocumentMoniker": "Scripts\\MergeTile.cs",
               "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MergeTile.cs",
               "RelativeToolTip": "Scripts\\MergeTile.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAYwBIAAAAAAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAwwD0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T14:58:55.563Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MergeBoardManager.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MergeBoardManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\MergeBoardManager.cs",
+              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MergeBoardManager.cs",
+              "RelativeToolTip": "Scripts\\MergeBoardManager.cs",
+              "ViewState": "AQIAAHMBAAAAAAAAAAAQwJEBAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T15:00:13.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "MergeTileTextureData.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\Resources\\MergeTileTextureData.cs",
+              "RelativeDocumentMoniker": "Scripts\\Resources\\MergeTileTextureData.cs",
+              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\Resources\\MergeTileTextureData.cs",
+              "RelativeToolTip": "Scripts\\Resources\\MergeTileTextureData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T16:49:05.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MergeTileTextureData.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Resources\\MergeTileTextureData.cs",
+              "RelativeDocumentMoniker": "Resources\\MergeTileTextureData.cs",
+              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Resources\\MergeTileTextureData.cs",
+              "RelativeToolTip": "Resources\\MergeTileTextureData.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T16:41:01.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Scripts\\GameManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T16:50:31.93Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MatchBoardManager.cs",
               "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MatchBoardManager.cs",
               "RelativeDocumentMoniker": "Scripts\\MatchBoardManager.cs",
               "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MatchBoardManager.cs",
               "RelativeToolTip": "Scripts\\MatchBoardManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAmAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwPAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T14:55:17.79Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MatchTile.cs",
               "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MatchTile.cs",
               "RelativeDocumentMoniker": "Scripts\\MatchTile.cs",
               "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MatchTile.cs",
               "RelativeToolTip": "Scripts\\MatchTile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T14:52:59.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PauseMenu.cs",
-              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\PauseMenu.cs",
-              "RelativeDocumentMoniker": "Scripts\\PauseMenu.cs",
-              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\PauseMenu.cs",
-              "RelativeToolTip": "Scripts\\PauseMenu.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAiwBQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T12:38:09.249Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainMenu.cs",
-              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MainMenu.cs",
-              "RelativeDocumentMoniker": "Scripts\\MainMenu.cs",
-              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MainMenu.cs",
-              "RelativeToolTip": "Scripts\\MainMenu.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAswA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T17:29:55.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
-              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Scripts\\GameManager.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAuwE8AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T16:50:31.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T14:52:59.577Z"
             }
           ]
         }

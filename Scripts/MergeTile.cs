@@ -1,15 +1,51 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Represents a single tile in the Merge-3 puzzle.
+/// </summary>
 public partial class MergeTile : Area2D
 {
-    public int Level { get; set; } = 1; // Starts at level 1
-    public MergeBoardManager Board { get; set; }
+    public int TileType { get;  set; }  // Store tile type
+    public int Level { get;  set; } = 1;
+    public MergeBoardManager Board { get; private set; }
     public int Row { get; set; }
     public int Col { get; set; }
 
-    public void Initialize(int level, MergeBoardManager board, int row, int col)
+    private AnimatedSprite2D _highlightAnim;
+
+    public override void _Ready()
     {
+        InitializeHighlight();
+    }
+
+    private void InitializeHighlight()
+    {
+        _highlightAnim = GetNodeOrNull<AnimatedSprite2D>("HighlightAnim");
+        if (_highlightAnim == null)
+        {
+            GD.PrintErr("ERROR: HighlightAnim not found in MergeTile!");
+        }
+        else
+        {
+            _highlightAnim.Visible = false;
+        }
+    }
+
+    public void SetHighlight(bool isHighlighted)
+    {
+        if (_highlightAnim == null) return;
+
+        _highlightAnim.Visible = isHighlighted;
+        if (isHighlighted)
+            _highlightAnim.Play("select");
+        else
+            _highlightAnim.Stop();
+    }
+
+    public void Initialize(int tileType, int level, MergeBoardManager board, int row, int col)
+    {
+        TileType = tileType;
         Level = level;
         Board = board;
         Row = row;
@@ -19,22 +55,18 @@ public partial class MergeTile : Area2D
 
     public void UpdateAppearance()
     {
-        // Change sprite/visuals based on Level
         Sprite2D sprite = GetNode<Sprite2D>("Sprite2D");
         if (sprite != null)
         {
-            sprite.Texture = Board.GetTileTexture(Level);
+            sprite.Texture = Board.GetTileTexture(TileType, Level);
         }
     }
 
-    public void MergeInto(MergeTile otherTile)
+    private void OnTileInputEvent(Viewport viewport, InputEvent @event, long shapeIdx)
     {
-        if (otherTile == null || otherTile.Level != Level)
-            return;
-
-        // Merge tiles, increase level
-        Level++;
-        otherTile.QueueFree(); // Remove the merged tile
-        UpdateAppearance();
+        if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+        {
+            Board.OnTileClicked(this);
+        }
     }
 }

@@ -22,7 +22,10 @@ public partial class GameManager : Node
     public int GlobalScore { get; set; } = 0;
 
     // A reference to the current match board (if any).
-    public MatchBoardManager CurrentBoard { get; set; } = null;
+    public MatchBoardManager CurrentMatchBoard { get; set; } = null;
+
+    // A reference to the current merge board (if any).
+    public MergeBoardManager CurrentMergeBoard { get; set; } = null;
 
     private bool _isPaused = false;
     private Control _pauseMenu;
@@ -79,19 +82,19 @@ public partial class GameManager : Node
     public void StartMatchGame()
     {
         SetState(GameState.Match);
-        GD.Print("Starting new game...");
+        GD.Print("Starting Match game...");
         GetTree().ChangeSceneToFile("res://Scenes/MatchScene.tscn");
     }
     /// <summary>
-    /// Starts a new game by switching to the match scene.
+    /// Starts a new game by switching to the merge scene.
     /// </summary>
     public void StartMergeGame()
     {
         SetState(GameState.Merge);
-        GD.Print("Starting Merge-3 game...");
+        GD.Print("Starting Merge game...");
         GetTree().ChangeSceneToFile("res://Scenes/MergeScene.tscn");
     }
-
+        
     /// <summary>
     /// Returns to the Main Menu.
     /// </summary>

@@ -3,7 +3,8 @@ using System;
 
 public partial class MainMenu : Control
 {
-    private Button newGameButton;
+    private Button matchGameButton;
+    private Button mergeGameButton;
     private Button settingsButton;
     private Button quitGameButton;
 
@@ -25,29 +26,33 @@ public partial class MainMenu : Control
         SetSize(GetViewportRect().Size);
     }
 
-
     private void DeferredSetup()
     {
-        newGameButton = GetNodeOrNull<Button>("VBoxContainer/NewGameButton");
+        matchGameButton = GetNodeOrNull<Button>("VBoxContainer/MatchGameButton");
+        mergeGameButton = GetNodeOrNull<Button>("VBoxContainer/MergeGameButton");
         settingsButton = GetNodeOrNull<Button>("VBoxContainer/SettingsButton");
         quitGameButton = GetNodeOrNull<Button>("VBoxContainer/QuitGameButton");
 
-        GD.Print($"Play Button found: {newGameButton != null}");
+        GD.Print($"Match Button found: {matchGameButton != null}");
+        GD.Print($"Merge Button found: {mergeGameButton != null}");
         GD.Print($"Settings Button found: {settingsButton != null}");
         GD.Print($"Quit Button found: {quitGameButton != null}");
 
-        if (newGameButton != null)
+        if (matchGameButton != null)
         {
-            newGameButton.Pressed += OnPlayButtonPressed;
-            GD.Print("Play button connected.");
+            matchGameButton.Pressed += OnMatchGameButtonPressed;
+            GD.Print("Match button connected.");
         }
-
+        if (mergeGameButton != null)
+        {
+            mergeGameButton.Pressed += OnMergeGameButtonPressed;
+            GD.Print("Merge button connected.");
+        }
         if (settingsButton != null)
         {
             settingsButton.Pressed += OnSettingsButtonPressed;
             GD.Print("Settings button connected.");
         }
-
         if (quitGameButton != null)
         {
             quitGameButton.Pressed += OnQuitButtonPressed;
@@ -56,12 +61,16 @@ public partial class MainMenu : Control
     }
 
 
-    private void OnPlayButtonPressed()
+    private void OnMatchGameButtonPressed()
     {
-        GD.Print("Play button pressed!");
+        GD.Print("Match button pressed!");
         GameManager.Instance?.StartMatchGame();
     }
-
+    private void OnMergeGameButtonPressed()
+    {
+        GD.Print("Merge button pressed!");
+        GameManager.Instance?.StartMergeGame();
+    }
     private void OnSettingsButtonPressed()
     {
         GD.Print("Settings button pressed! (To Be Implemented)");

@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8atbx3e0skhh"]
+
+[ext_resource type="Script" path="res://Scripts/MergeTile.cs" id="1_ry2bo"]
+[ext_resource type="Texture2D" uid="uid://c4hogfv1bj3f4" path="res://Assets/Spritesheets/07.png" id="2_5skqh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g03q8"]
+radius = 15.0333
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujjf0"]
+atlas = ExtResource("2_5skqh")
+region = Rect2(0, 176, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nti3"]
+atlas = ExtResource("2_5skqh")
+region = Rect2(32, 176, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcebw"]
+atlas = ExtResource("2_5skqh")
+region = Rect2(64, 176, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynju7"]
+atlas = ExtResource("2_5skqh")
+region = Rect2(96, 176, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_42s1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujjf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nti3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcebw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynju7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcebw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nti3")
+}],
+"loop": true,
+"name": &"select",
+"speed": 15.0
+}]
+
+[node name="Tile" type="Area2D"]
+script = ExtResource("1_ry2bo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_g03q8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
+
+[node name="HighlightAnim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_42s1i")
+animation = &"select"
+frame_progress = 0.818245
+
+[connection signal="input_event" from="." to="." method="OnTileInputEvent"]
