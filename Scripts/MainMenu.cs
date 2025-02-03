@@ -9,8 +9,22 @@ public partial class MainMenu : Control
 
     public override void _Ready()
     {
-        CallDeferred(nameof(DeferredSetup));
+        CallDeferred(nameof(ApplyAnchorsAndResize));
+        GetViewport().Connect("size_changed", new Callable(this, nameof(ApplyAnchorsAndResize)));
+
+    CallDeferred(nameof(DeferredSetup));
     }
+    private void ApplyAnchorsAndResize()
+    {
+        // Ensure the menu stretches fully and stays centered
+        AnchorLeft = 0;
+        AnchorTop = 0;
+        AnchorRight = 1;
+        AnchorBottom = 1;
+
+        SetSize(GetViewportRect().Size);
+    }
+
 
     private void DeferredSetup()
     {

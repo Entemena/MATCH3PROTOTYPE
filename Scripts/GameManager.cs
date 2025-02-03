@@ -23,19 +23,44 @@ public partial class GameManager : Node
     // A reference to the current puzzle board (if any).
     public BoardManager CurrentBoard { get; set; } = null;
 
+    private bool _isPaused = false;
+    private Control _pauseMenu;
+
     public override void _Ready()
     {
         if (Instance == null)
         {
             Instance = this;
-            ShowMainMenu();
         }
         else
         {
             QueueFree();
             return;
         }
+
         GD.Print("GameManager ready.");
+        SetState(GameState.MainMenu);
+        CallDeferred(nameof(DeferredLoadMainMenu));
+
+        // Load Pause Menu but keep it hidden
+        _pauseMenu = (Control)GD.Load<PackedScene>("res://Scenes/PauseMenu.tscn").Instantiate();
+        AddChild(_pauseMenu);
+        _pauseMenu.Visible = false;
+        // Ensure PauseMenu is the last child (rendered on top)
+        MoveChild(_pauseMenu, GetChildCount() - 1);
+    }
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventKey keyEvent && keyEvent.Pressed && keyEvent.Keycode == Key.Escape)
+        {
+            TogglePause(!_isPaused);
+        }
+    }
+    public void TogglePause(bool pause)
+    {
+        _isPaused = pause;
+        _pauseMenu.Visible = _isPaused;
+        GetTree().Paused = _isPaused;
     }
 
     /// <summary>
@@ -64,9 +89,15 @@ public partial class GameManager : Node
     public void ShowMainMenu()
     {
         SetState(GameState.MainMenu);
-        // Change the scene to your main menu scene. Adjust the path as needed.
+
+        if (_pauseMenu != null)
+        {
+            _pauseMenu.Visible = false; // Hide pause menu when switching scenes
+        }
+
+        GetTree().Paused = false; // Ensure game is not paused
+
         CallDeferred(nameof(DeferredLoadMainMenu));
-        ;
     }
     private void DeferredLoadMainMenu()
     {

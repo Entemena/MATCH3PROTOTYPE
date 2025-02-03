@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\pausemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|c:\\users\\liam\\documents\\match3prototype\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB1099BA-920F-4EBB-BD54-FD90D2C36AB2}|Match3Prototype.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PauseMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\PauseMenu.cs",
+              "RelativeDocumentMoniker": "Scripts\\PauseMenu.cs",
+              "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\PauseMenu.cs",
+              "RelativeToolTip": "Scripts\\PauseMenu.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAiwBQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T12:38:09.249Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,27 +57,27 @@
               "RelativeDocumentMoniker": "Scripts\\MainMenu.cs",
               "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MainMenu.cs",
               "RelativeToolTip": "Scripts\\MainMenu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAYwA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-02T17:29:55.17Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Scripts\\GameManager.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAuwEUAAAAFAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAYwDEAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-02T16:50:31.93Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "BoardManager.cs",
               "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\BoardManager.cs",
               "RelativeDocumentMoniker": "Scripts\\BoardManager.cs",
@@ -72,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Tile.cs",
               "DocumentMoniker": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\Tile.cs",
               "RelativeDocumentMoniker": "Scripts\\Tile.cs",
