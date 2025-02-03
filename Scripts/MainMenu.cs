@@ -59,7 +59,7 @@ public partial class MainMenu : Control
     private void OnPlayButtonPressed()
     {
         GD.Print("Play button pressed!");
-        GameManager.Instance?.StartNewGame();
+        GameManager.Instance?.StartMatchGame();
     }
 
     private void OnSettingsButtonPressed()

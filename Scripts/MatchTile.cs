@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class Tile : Area2D
+public partial class MatchTile : Area2D
 {
     private bool _isAnimating;
     public bool IsAnimating
@@ -10,7 +10,7 @@ public partial class Tile : Area2D
     }
 
     public int TileType { get; set; }
-    public BoardManager Board { get; set; }
+    public MatchBoardManager Board { get; set; }
     public int Row { get; set; }
     public int Col { get; set; }
 

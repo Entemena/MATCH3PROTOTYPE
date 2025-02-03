@@ -1,21 +1,21 @@
-﻿using Godot;
+using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class BoardManager : Node2D
+public partial class MatchBoardManager : Node2D
 {
     [Export] public int Rows = 8;
     [Export] public int Cols = 8;
-    [Export] public PackedScene TileScene;
-    [Export] public Texture2D[] TileTextures;
-    [Export] public int TileSize = 128;          // Original size of the tile texture.
-    [Export] public float TileScale = 2.0f;        // Scale factor for the tile.
-    [Export] public float TileMargin = 10.0f;      // Additional margin between tiles.
+    [Export] public PackedScene MatchTileScene;
+    [Export] public Texture2D[] MatchTileTextures;
+    [Export] public int MatchTileSize = 128;          // Original size of the tile texture.
+    [Export] public float MatchTileScale = 2.0f;        // Scale factor for the tile.
+    [Export] public float MatchTileMargin = 10.0f;      // Additional margin between tiles.
 
-    private Tile[,] _tiles;
+    private MatchTile[,] _tiles;
     private float _tileSpacing;      // Effective spacing between tile centers.
     private Vector2 _boardOffset;    // Offset to center the board on screen.
-    private Tile _currentlySelectedTile;
+    private MatchTile _currentlySelectedTile;
     private bool _isSwapping;
     private bool _boardLocked;
     private List<Tween> _activeTweens = new List<Tween>();
@@ -49,7 +49,7 @@ public partial class BoardManager : Node2D
         float maxSpacing = Mathf.Min(maxSpacingX, maxSpacingY);
 
         // Default spacing based on the tile’s effective size.
-        float defaultSpacing = (TileSize * TileScale) + TileMargin;
+        float defaultSpacing = (MatchTileSize * MatchTileScale) + MatchTileMargin;
 
         // Use the smaller value to ensure the board fits, but never less than 10.
         _tileSpacing = Mathf.Max(Mathf.Min(defaultSpacing, maxSpacing), 10);
@@ -67,18 +67,18 @@ public partial class BoardManager : Node2D
 
     private void CreateGrid()
     {
-        if (TileScene == null)
+        if (MatchTileScene == null)
         {
-            GD.PrintErr("TileScene is not assigned!");
+            GD.PrintErr("MatchTileScene is not assigned!");
             return;
         }
-        if (TileTextures == null || TileTextures.Length == 0)
+        if (MatchTileTextures == null || MatchTileTextures.Length == 0)
         {
-            GD.PrintErr("TileTextures array is null or empty!");
+            GD.PrintErr("MatchTileTextures array is null or empty!");
             return;
         }
 
-        _tiles = new Tile[Rows, Cols];
+        _tiles = new MatchTile[Rows, Cols];
         Random random = new Random();
 
         for (int row = 0; row < Rows; row++)
@@ -86,12 +86,12 @@ public partial class BoardManager : Node2D
             for (int col = 0; col < Cols; col++)
             {
                 // Instantiate a new tile.
-                Tile tileInstance = TileScene.Instantiate<Tile>();
+                MatchTile tileInstance = MatchTileScene.Instantiate<MatchTile>();
                 AddChild(tileInstance);
 
                 // Set its initial position (will be updated later).
                 tileInstance.Position = new Vector2(col * _tileSpacing, row * _tileSpacing);
-                tileInstance.TileType = random.Next(TileTextures.Length);
+                tileInstance.TileType = random.Next(MatchTileTextures.Length);
                 tileInstance.Board = this;  // Ensure that Tile.Board is of type BoardManager.
                 tileInstance.Row = row;
                 tileInstance.Col = col;
@@ -100,8 +100,8 @@ public partial class BoardManager : Node2D
                 Sprite2D sprite = tileInstance.GetNode<Sprite2D>("Sprite2D");
                 if (sprite != null)
                 {
-                    sprite.Texture = TileTextures[tileInstance.TileType];
-                    sprite.Scale = new Vector2(TileScale, TileScale);
+                    sprite.Texture = MatchTileTextures[tileInstance.TileType];
+                    sprite.Scale = new Vector2(MatchTileScale, MatchTileScale);
                 }
 
                 _tiles[row, col] = tileInstance;
@@ -152,7 +152,7 @@ public partial class BoardManager : Node2D
     /// <summary>
     /// Called by a tile when it is clicked.
     /// </summary>
-    public void OnTileClicked(Tile clickedTile)
+    public void OnTileClicked(MatchTile clickedTile)
     {
         if (_isSwapping || _boardLocked || clickedTile == null || !IsInstanceValid(clickedTile))
             return;
@@ -167,13 +167,13 @@ public partial class BoardManager : Node2D
         }
     }
 
-    private void SelectTile(Tile tile)
+    private void SelectTile(MatchTile tile)
     {
         _currentlySelectedTile = tile;
         _currentlySelectedTile.SetHighlight(true);
     }
 
-    private void HandleTileSelection(Tile clickedTile)
+    private void HandleTileSelection(MatchTile clickedTile)
     {
         if (_currentlySelectedTile != null)
             _currentlySelectedTile.SetHighlight(false);
@@ -190,7 +190,7 @@ public partial class BoardManager : Node2D
         }
     }
 
-    private bool AreTilesAdjacent(Tile tileA, Tile tileB)
+    private bool AreTilesAdjacent(MatchTile tileA, MatchTile tileB)
     {
         int rowDiff = Math.Abs(tileA.Row - tileB.Row);
         int colDiff = Math.Abs(tileA.Col - tileB.Col);
@@ -200,7 +200,7 @@ public partial class BoardManager : Node2D
     /// <summary>
     /// Swaps two adjacent tiles and then processes the board for matches.
     /// </summary>
-    private void SwapTiles(Tile tileA, Tile tileB)
+    private void SwapTiles(MatchTile tileA, MatchTile tileB)
     {
         if (_boardLocked)
             return;
@@ -270,7 +270,7 @@ public partial class BoardManager : Node2D
     /// </summary>
     private bool CheckForMatches()
     {
-        List<Tile> matchedTiles = new List<Tile>();
+        List<MatchTile> matchedTiles = new List<MatchTile>();
 
         CheckHorizontalMatches(matchedTiles);
         CheckVerticalMatches(matchedTiles);
@@ -284,7 +284,7 @@ public partial class BoardManager : Node2D
         return false;
     }
 
-    private void CheckHorizontalMatches(List<Tile> matchedTiles)
+    private void CheckHorizontalMatches(List<MatchTile> matchedTiles)
     {
         for (int row = 0; row < Rows; row++)
         {
@@ -298,7 +298,7 @@ public partial class BoardManager : Node2D
         }
     }
 
-    private void CheckVerticalMatches(List<Tile> matchedTiles)
+    private void CheckVerticalMatches(List<MatchTile> matchedTiles)
     {
         for (int col = 0; col < Cols; col++)
         {
@@ -335,11 +335,11 @@ public partial class BoardManager : Node2D
         return true;
     }
 
-    private void AddMatchToTiles(int startRow, int startCol, int rowStep, int colStep, List<Tile> matchedTiles)
+    private void AddMatchToTiles(int startRow, int startCol, int rowStep, int colStep, List<MatchTile> matchedTiles)
     {
         for (int i = 0; i < 3; i++)
         {
-            Tile tile = _tiles[startRow + i * rowStep, startCol + i * colStep];
+            MatchTile tile = _tiles[startRow + i * rowStep, startCol + i * colStep];
             if (!matchedTiles.Contains(tile))
                 matchedTiles.Add(tile);
         }
@@ -348,12 +348,12 @@ public partial class BoardManager : Node2D
     /// <summary>
     /// Removes the matched tiles from the board.
     /// </summary>
-    private void RemoveMatchedTiles(List<Tile> matchedTiles = null)
+    private void RemoveMatchedTiles(List<MatchTile> matchedTiles = null)
     {
-        matchedTiles ??= new List<Tile>();
-        HashSet<Tile> uniqueMatches = new HashSet<Tile>(matchedTiles);
+        matchedTiles ??= new List<MatchTile>();
+        HashSet<MatchTile> uniqueMatches = new HashSet<MatchTile>(matchedTiles);
 
-        foreach (Tile tile in uniqueMatches)
+        foreach (MatchTile tile in uniqueMatches)
         {
             if (tile != null && IsInstanceValid(tile))
             {
@@ -402,7 +402,7 @@ public partial class BoardManager : Node2D
         {
             if (_tiles[aboveRow, col] != null)
             {
-                Tile tileToMove = _tiles[aboveRow, col];
+                MatchTile tileToMove = _tiles[aboveRow, col];
                 _tiles[row, col] = tileToMove;
                 _tiles[aboveRow, col] = null;
 
@@ -432,12 +432,12 @@ public partial class BoardManager : Node2D
 
     private void CreateAndAnimateNewTile(int row, int col, Random random, Tween mainTween)
     {
-        Tile tileInstance = TileScene.Instantiate<Tile>();
+        MatchTile tileInstance = MatchTileScene.Instantiate<MatchTile>();
         AddChild(tileInstance);
 
         // Position the new tile above the board.
         tileInstance.Position = new Vector2(col * _tileSpacing, -_tileSpacing);
-        tileInstance.TileType = random.Next(TileTextures.Length);
+        tileInstance.TileType = random.Next(MatchTileTextures.Length);
         tileInstance.Board = this;  // Ensure that Tile.Board is of type BoardManager.
         tileInstance.Row = row;
         tileInstance.Col = col;
@@ -445,8 +445,8 @@ public partial class BoardManager : Node2D
         Sprite2D sprite = tileInstance.GetNode<Sprite2D>("Sprite2D");
         if (sprite != null)
         {
-            sprite.Texture = TileTextures[tileInstance.TileType];
-            sprite.Scale = new Vector2(TileScale, TileScale);
+            sprite.Texture = MatchTileTextures[tileInstance.TileType];
+            sprite.Scale = new Vector2(MatchTileScale, MatchTileScale);
         }
 
         mainTween
@@ -496,7 +496,7 @@ public partial class BoardManager : Node2D
     {
         if (_tiles != null)
         {
-            foreach (Tile tile in _tiles)
+            foreach (MatchTile tile in _tiles)
             {
                 if (tile != null)
                     tile.QueueFree();

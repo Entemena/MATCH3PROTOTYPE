@@ -4,7 +4,8 @@ using System;
 public enum GameState
 {
     MainMenu,
-    Puzzle,
+    Match,
+    Merge,
     Paused,
     GameOver
 }
@@ -20,8 +21,8 @@ public partial class GameManager : Node
     // Global game data (score, settings, etc.).
     public int GlobalScore { get; set; } = 0;
 
-    // A reference to the current puzzle board (if any).
-    public BoardManager CurrentBoard { get; set; } = null;
+    // A reference to the current match board (if any).
+    public MatchBoardManager CurrentBoard { get; set; } = null;
 
     private bool _isPaused = false;
     private Control _pauseMenu;
@@ -73,14 +74,22 @@ public partial class GameManager : Node
     }
 
     /// <summary>
-    /// Starts a new game by switching to the puzzle scene.
+    /// Starts a new game by switching to the match scene.
     /// </summary>
-    public void StartNewGame()
+    public void StartMatchGame()
     {
-        SetState(GameState.Puzzle);
+        SetState(GameState.Match);
         GD.Print("Starting new game...");
-        // Change the scene to your puzzle scene. Adjust the path as needed.
-        GetTree().ChangeSceneToFile("res://Scenes/PuzzleScene.tscn");
+        GetTree().ChangeSceneToFile("res://Scenes/MatchScene.tscn");
+    }
+    /// <summary>
+    /// Starts a new game by switching to the match scene.
+    /// </summary>
+    public void StartMergeGame()
+    {
+        SetState(GameState.Merge);
+        GD.Print("Starting Merge-3 game...");
+        GetTree().ChangeSceneToFile("res://Scenes/MergeScene.tscn");
     }
 
     /// <summary>
