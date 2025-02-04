@@ -10,11 +10,20 @@ public partial class MainMenu : Control
 
     public override void _Ready()
     {
-        CallDeferred(nameof(ApplyAnchorsAndResize));
+        ApplyAnchorsAndResize();
         GetViewport().Connect("size_changed", new Callable(this, nameof(ApplyAnchorsAndResize)));
 
-    CallDeferred(nameof(DeferredSetup));
+        matchGameButton = GetNodeOrNull<Button>("VBoxContainer/MatchGameButton");
+        mergeGameButton = GetNodeOrNull<Button>("VBoxContainer/MergeGameButton");
+        settingsButton = GetNodeOrNull<Button>("VBoxContainer/SettingsButton");
+        quitGameButton = GetNodeOrNull<Button>("VBoxContainer/QuitGameButton");
+
+        if (matchGameButton != null) matchGameButton.Pressed += OnMatchGameButtonPressed;
+        if (mergeGameButton != null) mergeGameButton.Pressed += OnMergeGameButtonPressed;
+        if (settingsButton != null) settingsButton.Pressed += OnSettingsButtonPressed;
+        if (quitGameButton != null) quitGameButton.Pressed += OnQuitButtonPressed;
     }
+
     private void ApplyAnchorsAndResize()
     {
         // Ensure the menu stretches fully and stays centered
@@ -25,7 +34,9 @@ public partial class MainMenu : Control
 
         SetSize(GetViewportRect().Size);
     }
-
+    /// <summary>
+    /// Potentially not needed, can be used with CallDeferred(nameof(DeferredSetup)) in _Ready()
+    /// </summary>
     private void DeferredSetup()
     {
         matchGameButton = GetNodeOrNull<Button>("VBoxContainer/MatchGameButton");

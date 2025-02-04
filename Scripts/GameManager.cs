@@ -44,15 +44,14 @@ public partial class GameManager : Node
 
         GD.Print("GameManager ready.");
         SetState(GameState.MainMenu);
-        CallDeferred(nameof(DeferredLoadMainMenu));
+        CallDeferred(nameof(ShowMainMenu)); // Directly call ShowMainMenu()
 
-        // Load Pause Menu but keep it hidden
-        _pauseMenu = (Control)GD.Load<PackedScene>("res://Scenes/PauseMenu.tscn").Instantiate();
+        // Load Pause Menu
+        _pauseMenu = GD.Load<PackedScene>("res://Scenes/PauseMenu.tscn").Instantiate<Control>();
         AddChild(_pauseMenu);
         _pauseMenu.Visible = false;
-        // Ensure PauseMenu is the last child (rendered on top)
-        MoveChild(_pauseMenu, GetChildCount() - 1);
     }
+
     public override void _Input(InputEvent @event)
     {
         if (@event is InputEventKey keyEvent && keyEvent.Pressed && keyEvent.Keycode == Key.Escape)
