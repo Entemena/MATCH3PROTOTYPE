@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MergeTileTextureData" load_steps=7 format=3 uid="uid://lel5qhgfvjld"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/MergeTileTextureData.cs" id="1_g1hkc"]
+[ext_resource type="Texture2D" uid="uid://lwlk63wmrrt" path="res://Assets/Tiles/j1.png" id="1_qfkew"]
+[ext_resource type="Texture2D" uid="uid://bv141i6jfcw50" path="res://Assets/Tiles/j2.png" id="2_aavh4"]
+[ext_resource type="Texture2D" uid="uid://djwg6f2rqy2pb" path="res://Assets/Tiles/j3.png" id="3_h4jae"]
+[ext_resource type="Texture2D" uid="uid://cwljxyje7a5rq" path="res://Assets/Tiles/j4.png" id="4_82oj0"]
+[ext_resource type="Texture2D" uid="uid://78w1lmxfx7g6" path="res://Assets/Tiles/j5.png" id="5_6ryq4"]
+
+[resource]
+script = ExtResource("1_g1hkc")
+LevelTextures = [ExtResource("1_qfkew"), ExtResource("2_aavh4"), ExtResource("3_h4jae"), ExtResource("4_82oj0"), ExtResource("5_6ryq4")]

@@ -35,6 +35,12 @@ public partial class MergeBoardManager : Node2D
     /// </summary>
     public override void _Ready()
     {
+        GD.Print("Loading TileTextureResources...");
+
+        for (int i = 0; i < TileTextureResources.Length; i++)
+        {
+            GD.Print($"Tile {i}: {TileTextureResources[i]?.LevelTextures.Count} textures loaded");
+        }
         GetViewport().Connect("size_changed", new Callable(this, nameof(OnWindowResized)));
 
         if (GameManager.Instance != null)
@@ -124,10 +130,16 @@ public partial class MergeBoardManager : Node2D
         {
             for (int col = 0; col < Cols; col++)
             {
-                int tileType = random.Next(MergeTileTextures.Length);
+                int tileType = random.Next(TileTextureResources.Length);
+
+                // Debug to confirm the tileType is correctly assigned
+                GD.Print($"?? Assigned TileType {tileType} at ({row}, {col}) -> Expected Texture: {TileTextureResources[tileType].LevelTextures[0].ResourcePath}");
+
                 SpawnTile(row, col, tileType, 1);
             }
         }
+
+
     }
 
     /// <summary>
@@ -231,9 +243,15 @@ public partial class MergeBoardManager : Node2D
     /// </summary>
     public Texture2D GetTileTexture(int tileType, int level)
     {
-        if (TileTextureResources == null || tileType >= TileTextureResources.Length)
+        if (TileTextureResources == null)
         {
-            GD.PrintErr("Invalid tile type: " + tileType);
+            GD.PrintErr("ERROR: TileTextureResources is NULL!");
+            return null;
+        }
+
+        if (tileType >= TileTextureResources.Length)
+        {
+            GD.PrintErr($"ERROR: Invalid tileType {tileType}, but we have {TileTextureResources.Length} tile types!");
             return null;
         }
 
@@ -241,13 +259,18 @@ public partial class MergeBoardManager : Node2D
 
         if (tileData == null || tileData.LevelTextures.Count == 0)
         {
-            GD.PrintErr("Tile texture data is missing for type: " + tileType);
+            GD.PrintErr($"ERROR: Tile texture data is missing or empty for type {tileType}");
             return null;
         }
 
         int index = Mathf.Clamp(level - 1, 0, tileData.LevelTextures.Count - 1);
+
+        GD.Print($"Fetching texture for TileType {tileType}, Level {level}, using index {index} -> {tileData.LevelTextures[index].ResourcePath}");
+
         return tileData.LevelTextures[index];
     }
+
+
 
     /// <summary>
     /// Checks if a tile should merge after a swap.
@@ -393,7 +416,8 @@ public partial class MergeBoardManager : Node2D
             {
                 if (_tiles[row, col] == null)
                 {
-                    int tileType = random.Next(MergeTileTextures.Length);
+                    // Use TileTextureResources.Length instead of MergeTileTextures.Length
+                    int tileType = random.Next(TileTextureResources.Length);
                     MergeTile newTile = MergeTileScene.Instantiate<MergeTile>();
                     AddChild(newTile);
                     newTile.Initialize(tileType, 1, this, row, col);
@@ -412,6 +436,7 @@ public partial class MergeBoardManager : Node2D
             }
         }
     }
+
 
 
 

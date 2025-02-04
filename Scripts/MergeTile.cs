@@ -58,9 +58,21 @@ public partial class MergeTile : Area2D
         Sprite2D sprite = GetNode<Sprite2D>("Sprite2D");
         if (sprite != null)
         {
-            sprite.Texture = Board.GetTileTexture(TileType, Level);
+            Texture2D newTexture = Board.GetTileTexture(TileType, Level);
+
+            if (newTexture != null)
+            {
+                sprite.Texture = newTexture;
+                GD.Print($"Updated tile appearance: TileType {TileType}, Level {Level} -> {newTexture.ResourcePath}");
+            }
+            else
+            {
+                GD.PrintErr($"ERROR: Failed to get texture for TileType {TileType}, Level {Level}");
+            }
         }
     }
+
+
 
     private void OnTileInputEvent(Viewport viewport, InputEvent @event, long shapeIdx)
     {
