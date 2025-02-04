@@ -54,8 +54,7 @@
               "RelativeToolTip": "Scripts\\MainMenu.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAA1wCUAAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T18:53:59.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-04T18:53:59.201Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "Scripts\\MergeTile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T14:58:55.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T14:58:55.563Z"
             },
             {
               "$type": "Document",
@@ -78,10 +76,9 @@
               "RelativeDocumentMoniker": "Scripts\\MergeBoardManager.cs",
               "ToolTip": "C:\\Users\\Liam\\Documents\\match3prototype\\Scripts\\MergeBoardManager.cs",
               "RelativeToolTip": "Scripts\\MergeBoardManager.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAwwI0BAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAI0BAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T15:00:13.003Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T15:00:13.003Z"
             },
             {
               "$type": "Document",
@@ -93,8 +90,7 @@
               "RelativeToolTip": "Scripts\\Resources\\MergeTileTextureData.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T16:49:05.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T16:49:05.641Z"
             },
             {
               "$type": "Document",
@@ -106,8 +102,7 @@
               "RelativeToolTip": "Scripts\\GameManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-02T16:50:31.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-02T16:50:31.93Z"
             }
           ]
         },
@@ -125,8 +120,7 @@
               "RelativeToolTip": "Scripts\\MatchBoardManager.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAUwC0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T14:55:17.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T14:55:17.79Z"
             },
             {
               "$type": "Document",
